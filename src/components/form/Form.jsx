@@ -47,7 +47,7 @@ const Form = ({handleSubmit,value,setValue}) => {
             aria-describedby="emailHelp"
             placeholder="Name"
 
-            value={value.name}
+            value={value?.name}
             name="name"
             onChange={changeHandler}
           />
@@ -63,14 +63,14 @@ const Form = ({handleSubmit,value,setValue}) => {
             id="phone"
             placeholder='+90 555 555 5555'
 
-            value={value.phone}
+            value={value?.phone}
             name="phone"
             onChange={changeHandler}
           />
           <i className="fa-solid fa-phone  phone2 "></i>
         </div>
         <select className="form-select" aria-label="Default select example"
-         value={value.gender}
+         value={value?.gender}
          name="gender"
          onChange={changeHandler}
         >

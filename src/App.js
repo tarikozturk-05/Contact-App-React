@@ -4,6 +4,7 @@ import './App.css';
 import Form from './components/form/Form';
 import { AddUser, EditUser } from './utils/function';
 import { ToastContainer } from "react-toastify";
+import Table from './components/table/Table';
 function App() {
   // const [name, setName] = useState("")
   // const [phone, setPhone] = useState("")
@@ -24,17 +25,22 @@ function App() {
   const handleSubmit=(e)=>{
     e.preventDefault()
 
-    if (value.id) {
-      EditUser(value)
-    }
-     else  {AddUser(value)}
-     setValue(initialValue)
-    // AddUser(value)
-    // setValue()
+   
+  if (value.id) {
+    EditUser(value)
   }
+   else  {AddUser(value)}
+   setValue(initialValue)
+ }
+
+ const editHandler=(id,name,phone,gender)=>{
+  setValue({id,name,phone,gender})
+}
+  
   return (
     <div className="App">
    <Form value={value} setValue={setValue} handleSubmit={handleSubmit}/>
+   <Table  editHandler={editHandler} />
    <ToastContainer/>
     </div>
   );
